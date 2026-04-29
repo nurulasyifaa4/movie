@@ -11,9 +11,12 @@ class AppServiceProvider extends ServiceProvider
      * Register any application services.
      */
     public function register(): void
-    {
-        //
-    }
+{
+    $this->app->bind(
+        \App\Interfaces\MovieRepositoryInterface::class,
+        \App\Repositories\MovieRepository::class
+    );
+}
 
     /**
      * Bootstrap any application services.
